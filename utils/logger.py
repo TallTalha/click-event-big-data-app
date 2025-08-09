@@ -27,7 +27,7 @@ def setup_logger(name: str, appDir: str, level: int = logging.INFO) -> None:
         None
     """
     LOGS_FILE_PATH = os.path.join(appDir,"logs") 
-    os.makedirs(LOGS_FILE_PATH, exist_ok=True) # app dizini altında logs klasörü yoksa oluşturulur.
+    os.makedirs(LOGS_FILE_PATH, exist_ok=True) # x app dizini altında logs klasörü yoksa oluşturulur.
 
     safe_name = re.sub(r"[^\w\-_.]", "_", name)
     LOG_FILE = os.path.join(LOGS_FILE_PATH, f"{safe_name}.log")

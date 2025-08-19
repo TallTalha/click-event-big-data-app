@@ -54,14 +54,14 @@ def main():
                     success, errors = bulk(client=es_client, actions=_create_es_actions(message_batch, index_name=ELASTIC_INDEX_NAME))
                     
                     if errors:
-                        LOG.warning(f"Bulk yazma sırasında {len(errors)} hata oluştu.")
+                        LOG.warning(f"Bulk yazma sırasında {errors} adet hata oluştu.")
                     
                     message_batch = [] # Batch'i temizle
         except Exception as e:
             LOG.error(f"Tüketici döngüsünde bir hata oluştu: {e}. Yeniden bağlanılacak...", exc_info=True)
             if kafka_consumer:
                 kafka_consumer.close()
-            sleep(5)
+            sleep(BATCH_TIMEOUT_SECONDS)
 
 if __name__ == "__main__":
     main()

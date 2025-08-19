@@ -52,7 +52,7 @@ def connect_to_es(elastic_url: str, elastic_user: str, elastic_paswd: str, elast
         elastic_paswd(str): Elastichsearch aracında kullanılacak kullanıcı şifresi.
         elastic_fingerprint(str): Güvenli bağlantı için ´CD:EF:...:34:56´ formatındaki parmak izi.
     Returns:
-        es_client(Elasticsearch|None): Bağlantı hatası oluşmazsa, ES istemcisi, hata oluşursa None döner.
+        es_client(Elasticsearch|None): Bağlantı hatası oluşmazsa ES istemcisi, hata oluşursa None döner.
     """
     LOG.info("Elastichsearch bağlantısını sağlanıyor...")
     try:

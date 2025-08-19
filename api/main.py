@@ -8,7 +8,6 @@ diğer modüllere (modeller, servisler) yönlendirerek iş akışını yönetir.
 import logging
 import os
 import sys
-import json
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException

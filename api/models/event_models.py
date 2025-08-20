@@ -15,6 +15,7 @@ class ClickLocation(BaseModel):
     """
     lat: float = Field(..., description="Enlem bilgisi", examples=[41.0082])
     lon: float = Field(..., description="Boylam bilgisi", examples=[28.9784])
+    city: str = Field(..., description="Şehir bilgisi", examples=["İstanbul"])
 
 class ClickData(BaseModel):
     """
@@ -23,7 +24,7 @@ class ClickData(BaseModel):
     """
     x: int = Field(..., description="Tıklama olayının X koordinatı.")
     y: int = Field(..., description="TIklama olayının Y koordinatı")
-    element_id: Optional[str] = Field(None, description="Tıklanan HTML elementinin ID'si (opsiyonel)", examples=["buy-now-button"])
+    element_id: Optional[str] = Field(None, description="Tıklanan HTML elementinin ID'si (opsiyonel)", examples=["buy-now"])
 
 class ClickEvent(BaseModel):
     """

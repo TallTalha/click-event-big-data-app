@@ -31,7 +31,7 @@ def connect_to_kafka( kafka_server: str ,kafka_topic: str, group_id: str, starti
     try:
         kafka_consumer = KafkaConsumer(
             kafka_topic,
-            bootstap_servers = kafka_server,
+            bootstrap_servers = kafka_server,
             group_id = group_id,
             auto_offset_reset = startingOffsets,
             value_deserializer = lambda v: json.loads(v.decode("utf-8"))
